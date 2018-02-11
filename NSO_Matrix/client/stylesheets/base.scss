@@ -1,0 +1,78 @@
+// this is the base project sass file
+// created by Josh Olson
+// Feb. 10, 2018
+
+// this should be a base with variables and partials to include on a base level
+// the rest of the individual views will have a sass file associated to it so you won't see component level stuff here
+
+$primary-color: #000000;
+$secondary-color: #ffffff;
+$tertiary-color: #45bfc3;
+
+$shade: $primary-color;
+
+//Imported partials below
+@import "partials/_animations.scss";
+@import "partials/_material-overrides.scss";
+
+.shade {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1999999999999;
+  background-color: rgba($shade, .5);
+}
+
+.ani-card {
+  -webkit-animation: close 1500ms linear both;
+  animation: close 1500ms linear both;
+
+  .card-open-content {
+    display: none;
+  }
+
+  .card-content,
+  .card-tabs {
+    display: block;
+  }
+  
+  .card-content {
+    background-image: url("")
+  }
+
+  &.active {
+    height: 85vh;
+    width: 80vw;
+    right: 10vw;
+    top: 15vh;
+    position: absolute;
+    z-index: 2999999999999;
+    //transition: all .5s;
+    -webkit-animation: open 1500ms linear both;
+    animation: open 1500ms linear both;
+
+    .card-open-content {
+      display: block;
+      text-align: center;
+      font-size: 40px;
+      margin-top: 25%;
+    }
+
+    .card-content,
+    .card-tabs {
+      display: none;
+    }
+
+  }
+
+  .bottom {
+    position: fixed;
+    bottom: 0;
+    right: 10px;
+    font-size: 14px;
+  }
+
+}
+
+
+
